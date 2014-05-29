@@ -1,11 +1,9 @@
 <?php namespace Ielijose\HeywireLaravel;
 
-use Curl;
-
 class Heywire {
 
-	private $_username = '+16788813539';
-	private $_password = '2512368';
+	private $_username = '';
+	private $_password = '';
 
 	public $number;
 	public $message;
