@@ -7,10 +7,13 @@ Send message with HeyWire from your Laravel App.
 
 Add to app/config/app.php
 
- * Providers:
- 
-  'Ielijose\HeywireLaravel\HeywireLaravelServiceProvider',
+ - Providers:
   
- * Aliases:
- 
+<pre><code>
+  'Ielijose\HeywireLaravel\HeywireLaravelServiceProvider',
+</code></pre>
+  
+ - Aliases:
+ <pre><code>
   'Heywire'		  => 'Ielijose\HeywireLaravel\Heywire',
+</code></pre>
