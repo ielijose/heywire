@@ -1,8 +1,6 @@
 {
     "name": "ielijose/heywire-laravel",
     "description": "HeyWire Service Provider for Laravel 4",
-    "keywords": ["laravel","laravel 4","heywire"],
-    "license": "MIT",
     "authors": [
         {
             "name": "Eli José Carrasquero",
@@ -10,12 +8,16 @@
         }
     ],
     "require": {
-        "php": ">=5.3.0"
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*"
     },
     "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
         "psr-0": {
-            "Ielijose\\HeywireLaravel": "src/"
+            "Ielijose\\HeywireLaravel\\": "src/"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }

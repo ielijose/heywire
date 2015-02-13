@@ -12,22 +12,34 @@ class HeywireLaravelServiceProvider extends ServiceProvider {
 	protected $defer = false;
 
 	/**
+	 * Bootstrap the application events.
+	 *
+	 * @return void
+	 */
+	public function boot()
+	{
+		$this->package('ielijose/heywire');
+	}
+
+	/**
 	 * Register the service provider.
 	 *
 	 * @return void
 	 */
 	public function register()
-	{
+	{	
+
 		$this->app['heywire'] = $this->app->share(function($app)
 		{
-			return new Heywire;
+			$config = $app['config']->get('heywire::config');
+			return new Heywire($config);
 		});
 
 		$this->app->booting(function()
 		{
 		  $loader = \Illuminate\Foundation\AliasLoader::getInstance();
 		  $loader->alias('Heywire', 'Ielijose\HeywireLaravel\Facades\Heywire');
-		});
+		});		
 	}
 
 	/**

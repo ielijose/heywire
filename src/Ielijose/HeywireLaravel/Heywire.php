@@ -2,16 +2,19 @@
 
 class Heywire {
 
-	private $_username = '';
-	private $_password = '';
+	private $user = "";
+	private $password = "";
 
 	public $number;
 	public $message;
 	public $send = NULL;
 
-	public function __construct($number = '', $message = '', $send = true){  
-		
-	}  
+
+	function __construct($config)
+	{
+		$this->user = $config['user'];
+		$this->password = $config['password'];
+	}
 
 	public function text($number = '', $message = '', $send = true){  
 		$this->number = $number;  
@@ -65,7 +68,7 @@ class Heywire {
 	}
 
 	private function getCredentials(){
-		return "UserName=" . $this->_username . "&Password=" . $this->_password . "&RememberMe=false";
+		return "UserName=" . $this->user . "&Password=" . $this->password . "&RememberMe=false";
 	}
 
 	public function setNumber($number){
