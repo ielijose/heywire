@@ -1,6 +1,6 @@
 {
-    "name": "ielijose/heywire-laravel",
-    "description": "HeyWire Service Provider for Laravel 4",
+    "name": "ielijose/heywire",
+    "description": "",
     "authors": [
         {
             "name": "Eli José Carrasquero",
@@ -13,7 +13,7 @@
     },
     "autoload": {        
         "psr-0": {
-            "Ielijose\\HeywireLaravel\\": "src/"
+            "Ielijose\\Clickatell\\": "src/"
         }
     },
     "minimum-stability": "stable"

@@ -1,8 +1,8 @@
-<?php namespace Ielijose\HeywireLaravel;
+<?php namespace Ielijose\Heywire;
 
 use Illuminate\Support\ServiceProvider;
 
-class HeywireLaravelServiceProvider extends ServiceProvider {
+class HeywireServiceProvider extends ServiceProvider {
 
 	/**
 	 * Indicates if loading of the provider is deferred.
@@ -28,7 +28,6 @@ class HeywireLaravelServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{	
-
 		$this->app['heywire'] = $this->app->share(function($app)
 		{
 			$config = $app['config']->get('heywire::config');
@@ -37,9 +36,10 @@ class HeywireLaravelServiceProvider extends ServiceProvider {
 
 		$this->app->booting(function()
 		{
-		  $loader = \Illuminate\Foundation\AliasLoader::getInstance();
-		  $loader->alias('Heywire', 'Ielijose\HeywireLaravel\Facades\Heywire');
-		});		
+			$loader = \Illuminate\Foundation\AliasLoader::getInstance();
+			$loader->alias('Heywire', 'Ielijose\Heywire\Facades\Heywire');
+		});
+
 	}
 
 	/**
@@ -49,7 +49,7 @@ class HeywireLaravelServiceProvider extends ServiceProvider {
 	 */
 	public function provides()
 	{
-		return array('heywire');
+		return array();
 	}
 
 }

@@ -1,4 +1,4 @@
-<?php namespace Ielijose\HeywireLaravel;
+<?php namespace Ielijose\Heywire;
 
 class Heywire {
 
